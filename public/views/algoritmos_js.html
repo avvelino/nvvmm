@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+  <head>
+    <link href="/styles/style.css" rel="stylesheet">
+    <link href="/styles/buttons.css" rel="stylesheet">
+    <script src="/functions/exibirForm.js"></script>
+  </head>
+          <a id='teste' href='/'>
+        
+            <img class ='flipInf' src="images/jslogo.png" width = '300px' height= '300px'/>
+
+          </a>
+  
+    <body>
+
+      <div id = "formM">
+			<form  action="numberPrime" id="form1" method ="post">
+			<h1>Numero Primo</h1>
+            Numero:<input type="text" name="txtNumber"/><br>
+            <input type="submit" value="Enviar"/>
+			</form>
+
+        <form  action="somatorio" id="form2" method ="post">
+			<h1>Somatorio</h1>
+            Numeros:<input type="text" name="txtVetor"/><br>
+            <input type="submit" value="Enviar"/>
+            
+			</form>
+			
+			<form  action="fibonacci" id="form3" method ="post">
+			<h1>Fibonnaci</h1>
+           	Fibo:<input type="text" name="txtFibo"/><br>
+            <input type="submit" value="Enviar"/>
+            
+			</form>
+			
+			<form  action="mdc" id="form4" method ="post">
+			<h1>Mdc</h1>
+           	Primeiro Valor:<input type="text" name="txtPrim"/><br>
+           	Segundo Valor:<input type="text" name="txtSegu"/><br>
+            <input type="submit" value="Enviar"/>
+            
+			</form>
+			
+			<form  action="quickshort" id="form5" method ="post">
+			<h1>Ordenação QuickShort</h1>
+           	QuickShort:<input type="text" name="txtVetor"/><br>
+            <input type="submit" value="Enviar"/>
+            
+			</form>
+			
+			<form  action="contagemInt" id="form6" method ="post">
+			<h1>Contagem Inteiro</h1>
+           	N Termos:<input type="text" name="txtTeste"/><br>
+           	Contagem Inteiro:<input type="text" name="txtTeste1"/><br>
+            <input type="submit" value="Enviar"/>
+  
+			</form>
+      </div>
+      
+      <div class = 'container'>
+
+        <button onclick="deixarVisivel('form1')" class="contJs">Number Primo</button>
+			  <button onclick="deixarVisivel('form2')" class="contJs">Somatorio</button>
+			  <button onclick="deixarVisivel('form3')" class="contJs">Fibonnaci</button>
+			  <button onclick="deixarVisivel('form4')" class="contJs">MDC</button>
+			  <button onclick="deixarVisivel('form5')" class="contJs">QuickSort</button>
+			  <button onclick="deixarVisivel('form6')" class="contJs">Contagem Inteiro</button>
+      </div>
+      
+    </body>
+
+</html>
