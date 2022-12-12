@@ -1,4 +1,4 @@
-entrypoint = "server.js"
+entrypoint = "api/server.js"
 
 hidden = [".config"]
 
@@ -71,7 +71,7 @@ support = true
       cwd = "."
       environment = []
       pauseForSourceMap = false
-      program = "./index.js"
+      program = ".api/server.js"
       request = "launch"
       sourceMaps = true
       stopOnEntry = false

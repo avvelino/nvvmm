@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const path = require("path");
 
-app.use(express.static('public'));
+app.use(express.static('api/public'));
 //app.use('/images', express.static('images'));
 app.use(express.urlencoded({
   extended: true
 }));
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/js', (req, res) => {
@@ -117,7 +117,7 @@ function isPowerOfTwo(number) {
   if (number < 1) {
     return false;
   }
-  
+
   let dividedNumber = number;
   while (dividedNumber !== 1) {
     if (dividedNumber % 2 !== 0) {
