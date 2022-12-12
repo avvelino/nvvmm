@@ -27,12 +27,83 @@ app.post('/numberPrime', function(req, res) {
 
 app.post('/somatorio', function(req, res) {
   var requi = req.body.txtVetor;
-
-  res.send("Resultado da soma:"+ somatorio(requi))
+  console.log(requi)
+  res.send("Resultado da soma:" + somatorio(requi))
 
 });
 
+app.post('/fibonacci', function(req, res) {
+  var requi = req.body.txtFibo;
+  requi = parseInt(requi);
+  console.log("fibo:" + requi)
+  var resp = fibo(requi);
+  res.send("Resultado da Fibo:" + resp)
 
+});
+
+app.post('/mdc', function(req, res) {
+  var requi = req.body.txtPrim;
+  var requi2 = req.body.txtSegu;
+  requi = parseInt(requi);
+  requi2 = parseInt(requi);
+  console.log("mds:" + requi + "," + requi2)
+  var resp = mdc(requi, requi2);
+  res.send("Resultado do mdc:" + resp)
+
+});
+
+app.post('/quicksort', function(req, res) {
+  var requi = req.body.txtVetor;
+
+  console.log("quick:" + requi)
+  var resp = vString(requi);
+  console.log("Vetor :" + resp + " Tamanho:" + resp.length)
+  var qk = quicksort(resp)
+  res.send("Resultado da Ordenação QuickSort:" + qk)
+
+});
+
+app.post('/contagemInt', function(req, res) {
+  var requi = req.body.txtVetor;
+  var resp = vString(requi);
+  var ct = contagem(resp);
+  res.send("Resultado contagem de numeros Primos:" + ct)
+
+});
+
+app.post('/factorial', function(req, res) {
+  var requi = req.body.txtNumber;
+  var resp = parseInt(requi);
+  var ft = factorial(resp);
+  res.send("Resultado Fatorial de " + resp + ": " + ft)
+
+});
+
+app.post('/mmc', function(req, res) {
+  var requi = req.body.txtNumber;
+  var requi2 = req.body.txtNumber2;
+  var resp = parseInt(requi);
+  var resp2 = parseInt(requi2);
+  var mc = mmc(resp, resp2);
+  res.send("Resultado MMC " + mc)
+
+});
+
+app.post('/potenciadois', function(req, res) {
+  var requi = req.body.txtNumber;
+  requi = parseInt(requi);
+  var resp = isPowerOfTwo(requi) ? "Numero potencia de dois" : "Numero não é potencia de dois";
+  res.send("Resultado:" + resp);
+
+});
+
+app.post('/squad', function(req, res) {
+  var requi = req.body.txtNumber;
+  requi = parseInt(requi);
+  var resp = squareRoot(requi);
+  res.send("Resultado:" + resp);
+
+});
 
 app.listen(3000, () => {
   console.log('server started');
@@ -41,6 +112,53 @@ app.listen(3000, () => {
 
 
 //scripts
+
+function isPowerOfTwo(number) {
+  if (number < 1) {
+    return false;
+  }
+  
+  let dividedNumber = number;
+  while (dividedNumber !== 1) {
+    if (dividedNumber % 2 !== 0) {
+      return false;
+    }
+
+    dividedNumber /= 2;
+  }
+
+  return true;
+}
+
+function squareRoot(number, tolerance = 0) {
+  if (number < 0) {
+    throw new Error('The method supports only positive integers');
+  }
+
+  if (number === 0) {
+    return 0;
+  }
+
+  let root = 1;
+
+  const requiredDelta = 1 / (10 ** tolerance);
+
+  while (Math.abs(number - (root ** 2)) > requiredDelta) {
+
+    root -= ((root ** 2) - number) / (2 * root);
+  }
+
+  return Math.round(root * (10 ** tolerance)) / (10 ** tolerance);
+}
+
+function mmc(a, b) {
+  return ((a === 0) || (b === 0)) ? 0 : Math.abs(a * b) / mdc(a, b);
+}
+
+function factorial(number) {
+  return number > 1 ? number * factorial(number - 1) : 1;
+}
+
 function contagem(arry) {
   if (!Array.isArray(arry)) {
     return 'Variavel deve ser um objeto array'
@@ -104,7 +222,6 @@ function numberPrime(num) {
 }
 
 function quicksort(array) {
-
   if (!Array.isArray(array)) {
     return 'Variavel deve ser um objeto array'
   }

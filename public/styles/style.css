@@ -4,7 +4,7 @@
 
 
 
-#form1,#form2,#form3,#form4,#form5,#form6{
+#form1,#form2,#form3,#form4,#form5,#form6,#form7,#form8,#form9,#form10{
 	display: none;
 }
 
@@ -19,13 +19,13 @@ div{
         margin: 0px
     }
     .container {
-        width: 100%;
-        height: 100%;
-        background: white;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+            width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
     }
 
     

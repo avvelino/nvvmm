@@ -48,7 +48,7 @@
 	text-shadow: 1px 1px 20px #000000;
 	border: solid #FFFF00 1px;
 	text-decoration: none;
-	display: inline-block;
+	display: inline-flex;
 	cursor: pointer;
 	text-align: center;
 }
